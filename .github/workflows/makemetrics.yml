@@ -55,5 +55,5 @@ jobs:
           plugin_screenshot: yes
           plugin_screenshot_background: yes
           plugin_screenshot_selector: body
-          plugin_screenshot_title: Screenshot
+          plugin_screenshot_title: My Site Screenshot
           plugin_screenshot_url: https://amazingkenneth.github.io
