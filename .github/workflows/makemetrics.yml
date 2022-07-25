@@ -1,4 +1,5 @@
 # Visit https://github.com/lowlighter/metrics#-documentation for full reference
+# Generated From https://metrics.lecoq.io/
 name: Metrics
 on:
   # Schedule updates (each hour)
