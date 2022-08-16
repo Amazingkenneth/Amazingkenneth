@@ -2,7 +2,7 @@
 # Generated From https://metrics.lecoq.io/
 name: Metrics
 on:
-  # Schedule updates (each hour)
+  # Schedule updates (every day)
   schedule: [{cron: "0 0 * * *"}]
   # Lines below let you run workflow manually and on each commit
   workflow_dispatch:
