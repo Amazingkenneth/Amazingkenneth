@@ -1,1 +1,1 @@
-![Metrics](/github-metrics.svg)
+![Metrics](https://amazingkenneth.github.io/Amazingkenneth/github-metrics.svg)
