@@ -2,7 +2,7 @@
 
 <img style="width: 47%" align="right" src="https://github-readme-stats.vercel.app/api?username=Amazingkenneth&theme=dark&show_icons=true" />
 
-I'm Kenneth Zhong, a student at [the Affiliate High School of South China Normal University](https://iiis.tsinghua.edu.cn/).  
+I'm Yankang Zhong, a student at [the Affiliate High School of South China Normal University](https://iiis.tsinghua.edu.cn/).  
 
 Currently not a developer or something, but maybe someday will.
 
