@@ -1,6 +1,7 @@
 import subprocess
 import random
 import difflib
+import time
 
 
 def compile_cpp(source_file: str, output_executable) -> None:
@@ -25,18 +26,39 @@ def generate_data() -> str:
     Generates test data.
     Customize this function based on the input format your programs expect.
     """
-    n = 5
-    a = " ".join(str(random.randint(1, 100)) for _ in range(n))
-    return f"{n}\n{a}\n"
+    n = 5000
+    test_case_str = f"{n}\n"
+
+    for _ in range(n):
+        # Generate l_i and r_i such that 0 < l_i < r_i ≤ 10^9
+        l_i = random.randint(1, 10**9 - 1)
+        r_i = random.randint(l_i + 1, 10**9)
+        # l_i = random.randint(1, 8)
+        # r_i = random.randint(l_i + 1, 9)
+        k_i = random.randint(1, r_i - l_i)
+
+        test_case_str += f"{l_i} {r_i} {k_i}\n"
+
+    # return f"{n} {k}\n{a}\n{b}\n"
+    return test_case_str
 
 
 def run_executable(executable: str, input_data: str) -> str:
     """
     Runs an executable with the provided input data and captures its output.
     """
+    start_time = time.process_time()  # Start measuring CPU time
     result = subprocess.run(
         executable, input=input_data, text=True, capture_output=True, check=True
     )
+    end_time = time.process_time()  # End measuring CPU time
+
+    cpu_time = end_time - start_time  # Calculate the CPU time taken
+    if cpu_time > 1:
+        print(
+            f"CPU time for {executable}: {cpu_time:.3f} seconds"
+        )  # Print the CPU time
+
     return result.stdout.strip()
 
 
@@ -62,6 +84,7 @@ def main():
     compile_cpp("sol.cpp", executable2)
 
     test_case_count = 0
+    overall_start_time = time.process_time()
     while True:
         test_case_count += 1
         data = generate_data()
@@ -80,7 +103,13 @@ def main():
             print(f"{executable2}:\n{ '=' * 20 }\n{output2}")
             break
         if test_case_count % 100 == 0:
-            print(f"Test case {test_case_count} passed.")
+            overall_end_time = time.process_time()
+            overall_cpu_time = (
+                overall_end_time - overall_start_time
+            )
+            print(
+                f"Test case {test_case_count} passed. Overall CPU time: {overall_cpu_time:.3f} seconds"
+            )
 
 
 if __name__ == "__main__":
