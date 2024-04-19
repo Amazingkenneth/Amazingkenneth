@@ -3,7 +3,7 @@ Configuration example for ``ptpython``.
 https://github.com/prompt-toolkit/ptpython/blob/master/examples/ptpython_config/config.py
 
 Copy this file to $XDG_CONFIG_HOME/ptpython/config.py
-On Windows, this is: C:\Users\...\AppData\Local\prompt_toolkit\ptpython\config.py
+On Windows, this is: C:/Users/.../AppData/Local/prompt_toolkit/ptpython/config.py
 On Linux, this is: ~/.config/ptpython/config.py
 On macOS, this is: ~/Library/Application Support/ptpython/config.py
 """
